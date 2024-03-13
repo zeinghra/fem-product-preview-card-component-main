@@ -1,0 +1,42 @@
+@use 'variables' as *;
+
+.product-container {
+    width: min(37.5rem, calc(100vw - 2rem));
+    display: grid;
+    grid-template-columns: 1fr;
+    @media screen and (min-width: 576px) {
+        grid-template-columns: 1fr 1fr;
+    }
+    border-radius: .5rem;
+    background-color: $neutral-3;
+    overflow: hidden;
+    font-size: $fs-2;
+
+    .content {
+        padding: 1.5rem;
+        @media screen and (min-width: 576px) {
+            padding: 2rem;
+        }
+        display: grid;
+        gap: 1.5rem;
+
+        &__h1 {
+            color: $neutral-2;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+        }
+
+        &__h2 {
+            color: $neutral-1;
+            font-size: $fs-6;
+            font-family: $header-font-family;
+            font-weight: $fw-bold;
+            line-height: 1;
+        }
+
+        &__p {
+            color: $neutral-2;
+            line-height: 1.5;
+        }
+    }
+}

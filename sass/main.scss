@@ -1,0 +1,65 @@
+@use 'resets' as *;
+@use 'variables' as *;
+@use 'product-container' as *;
+
+
+body {
+    min-height: 100vh;
+    font-family: $default-font-family ;
+    font-weight: $fw-default;
+    display: grid;
+    place-content: center;
+    background-color: $secondary;
+    padding: 1rem;
+}
+
+.hero-img {
+    background-image: url('../images/image-product-mobile.jpg');
+    height: 240px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    @media (min-width: 576px) {
+        background-image: url('../images/image-product-desktop.jpg');
+        height: auto;
+    }
+}
+
+.d-f {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1.25rem;
+}
+
+.current-price {
+    color: $primary;
+    font-size: $fs-6;
+    font-weight: $fw-bold;
+    font-family: $header-font-family;
+}
+
+.last-price {
+    color: $neutral-2;
+    text-decoration: line-through;
+}
+
+.btn {
+    background-color: $primary;
+    border: none;
+    border-radius: .5rem;
+    padding-block: 1rem;
+    display: flex;
+    gap: .5rem;
+    justify-content: center;
+    align-items: center;
+    color: $neutral-3;
+    font-weight: $fw-bold;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    &:hover,
+    &:focus {
+        background-color: $primary-dark;
+        box-shadow: 0 5px 10px hsla(158, 36%, 20%, 0.25);
+    }
+}
